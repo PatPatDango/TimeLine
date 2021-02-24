@@ -503,8 +503,12 @@ public class AppointmentForm extends javax.swing.JPanel {
      */
     private void button_saveNewEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_saveNewEventActionPerformed
         newEventSpecifications();
-        dbHandler.createNewEvent(getEvent());
-        MainFrame.getObject().updateEvents();
+        if (testIfEventInformationIsSufficient(this.evt)) {
+            dbHandler.createNewEvent(getEvent());
+            MainFrame.getObject().updateEvents();
+        } else {
+            JOptionPane.showMessageDialog(null, "Please Check your Input");
+        }
     }//GEN-LAST:event_button_saveNewEventActionPerformed
     /**
      * Deletes a selected Event
@@ -661,17 +665,18 @@ public class AppointmentForm extends javax.swing.JPanel {
      * edited
      */
     private void setEventSpecification() {
-        this.txt_HostName.setText(evt.getHost().getEmail());
-        this.txt_HostName.setEnabled(false);
-        this.txt_eventname.setText(evt.getName());
-        this.txt_eventlocation.setText(evt.getLocation());
-        this.txt_eventduration.setText(String.valueOf(evt.getDuration()));
-        this.jDC_eventDate.setDate(Date.from(evt.getDateTime().toInstant(ZoneOffset.UTC)));
+        txt_HostName.setText(evt.getHost().getEmail());
+        txt_HostName.setEnabled(false);
+        txt_eventname.setText(evt.getName());
+        txt_eventlocation.setText(evt.getLocation());
+        txt_eventduration.setText(String.valueOf(evt.getDuration()));
+        jDC_eventDate.setDate(Date.from(evt.getDateTime().toInstant(ZoneOffset.UTC)));
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
         String formatDateTime = evt.getDateTime().format(formatter);
-        this.combobox_eventTime.setSelectedItem(formatDateTime);
-        this.combobox_eventpriority.setSelectedItem(evt.getPriority());
-        this.participants = evt.getParticipants();
+        combobox_eventTime.setSelectedItem(formatDateTime);
+        if(evt.getPriority() != null)
+        combobox_eventpriority.setSelectedItem(evt.getPriority());
+        participants = evt.getParticipants();
         
         //Participants
         participants.stream().forEach((User) -> {
@@ -733,7 +738,9 @@ public class AppointmentForm extends javax.swing.JPanel {
 
         return (evt.getName().matches("^[a-zA-Z\\s]*$")
                 && evt.getDuration() > 0
-                && evt.getLocation().trim().matches("^[a-zA-Z]*$"));
+                && evt.getLocation().trim().matches("^[a-zA-Z\\s]*$")
+                && (evt.getDateTime().equals(LocalDateTime.now()) 
+                        || evt.getDateTime().isAfter(LocalDateTime.now()) ));
     }
 
 }

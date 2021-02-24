@@ -118,8 +118,6 @@ public class Login extends javax.swing.JFrame {
 
         jLabel_login.setText("LOGIN :");
 
-        txt_username.setText("pat");
-
         jLabel_username.setText("Username:");
         jLabel_username.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
@@ -142,7 +140,6 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        pw_password.setText("1234");
         pw_password.setName("pw_password"); // NOI18N
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);

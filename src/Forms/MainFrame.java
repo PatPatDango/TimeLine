@@ -514,7 +514,11 @@ public class MainFrame extends javax.swing.JFrame {
      * @param evt mouse click
      */
     private void jBAddAnEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAddAnEventActionPerformed
-        showAppointment(false, true);
+        if(!getToday().after(jCalendar2.getDate())){
+            showAppointment(false, true);
+        } else {
+            JOptionPane.showMessageDialog(this, "This Date is in the Past.");
+        }
     }//GEN-LAST:event_jBAddAnEventActionPerformed
     /**
      * An {@link AppointmentForm} will be opened containing the information
