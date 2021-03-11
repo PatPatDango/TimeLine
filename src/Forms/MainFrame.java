@@ -268,6 +268,7 @@ public class MainFrame extends javax.swing.JFrame {
         AppointmentPanel.setLayout(new java.awt.BorderLayout());
 
         MascotLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Mascot500x400.png"))); // NOI18N
+        MascotLabel.setMinimumSize(new java.awt.Dimension(300, 200));
         AppointmentPanel.add(MascotLabel, java.awt.BorderLayout.CENTER);
 
         UserInteractionPanel.setBackground(new java.awt.Color(255, 255, 255));
@@ -449,7 +450,7 @@ public class MainFrame extends javax.swing.JFrame {
         CenterLayout.setHorizontalGroup(
             CenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CenterLayout.createSequentialGroup()
-                .addComponent(AppointmentPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 401, Short.MAX_VALUE)
+                .addComponent(AppointmentPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
                 .addGroup(CenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(CalendarPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

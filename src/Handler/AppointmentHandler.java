@@ -31,8 +31,6 @@ public class AppointmentHandler {
         ArrayList<Appointment> daysEvents = new ArrayList<>();
      
         usersEvents.stream().forEach(evt -> {
-            
-            
             if (compareDates(evt.getDateTime(), chosenDate)) {
                 daysEvents.add(evt);
             }

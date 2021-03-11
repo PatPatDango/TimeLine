@@ -35,7 +35,7 @@ import javax.swing.UnsupportedLookAndFeelException;
  */
 public class ExportToPdfHandler {
 
-    final static String PATH = "DocumentsTest.pdf";
+    final static String PATH = "WeeklySchedule.pdf";
     final static String IMG = "src/icons/Mascot500x400.png";
     private static final Font plain_text = FontFactory.getFont(FontFactory.HELVETICA, 12);
     private static final Font headlineFont = FontFactory.getFont(FontFactory.COURIER_BOLD, 36);

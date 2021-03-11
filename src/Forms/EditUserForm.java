@@ -359,7 +359,6 @@ public class EditUserForm extends javax.swing.JPanel {
         events = dbHandler.getUsersEvents(user);
         setContent();
         MainFrame.getObject().updateEvents();
-
     }//GEN-LAST:event_button_saveChangesActionPerformed
     /**
      * revert all modifications of the user ans resets the inputfields
@@ -412,7 +411,6 @@ public class EditUserForm extends javax.swing.JPanel {
                     });
         }
         EventTable.setModel(eventModel);
-        MainFrame.getObject().updateEvents();
     }
     /**
      * Sets the {@link User} of the form to the {@link User} which is
