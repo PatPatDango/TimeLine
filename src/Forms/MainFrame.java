@@ -549,7 +549,7 @@ public class MainFrame extends javax.swing.JFrame {
      * @param evt another day of the Calender has been selected
      */
     private void jCalendar2PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jCalendar2PropertyChange
-        updateEvents();
+        updateEvents(); 
         showEventsOfDay(jCalendar2.getDate());
     }//GEN-LAST:event_jCalendar2PropertyChange
 
