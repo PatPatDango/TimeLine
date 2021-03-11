@@ -147,7 +147,7 @@ public class Appointment {
     public boolean equals(Object other) {
 
         // If the object is compared with itself then return true   
-        if (other.equals(this)) {
+        if (other == this) {
             return true;
         }
 

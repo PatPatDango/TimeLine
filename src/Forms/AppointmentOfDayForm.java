@@ -129,7 +129,7 @@ public class AppointmentOfDayForm extends javax.swing.JPanel {
         int row = List_DaysEvents.getSelectedIndex();
         User user = MainFrame.getObject().getUser();
         Appointment selectedEvent = getSelectedEvent(row);
-        MainFrame.getObject().setSelectedEvent(row);
+        MainFrame.getObject().setSelectedEvent(selectedEvent);
         if (evt.getClickCount() > 1 && user.equals(selectedEvent.getHost())) {     
                 MainFrame.getObject().showAppointment(true, true); 
         }else{
@@ -171,7 +171,7 @@ public class AppointmentOfDayForm extends javax.swing.JPanel {
      * @return {@link Appointment}
      */
     private Appointment getSelectedEvent(int row) {
-        return null;
+        return DaysEvents.get(row);
     }
     /**
      * Sets the the {@link ArrayList} of {@link Appointment} of this form 

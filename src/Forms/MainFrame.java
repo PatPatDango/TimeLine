@@ -8,10 +8,9 @@ import java.time.*;
 import java.util.*;
 import javax.swing.*;
 
-
-
 /**
  * The MainFrame of the application and the central source of the project
+ *
  * @author patricia
  */
 public class MainFrame extends javax.swing.JFrame {
@@ -27,11 +26,12 @@ public class MainFrame extends javax.swing.JFrame {
     private int[] priorities = new int[3];
 
     /**
-     *  An instance of the MainFrame will be called.
+     * An instance of the MainFrame will be called.
      */
     public static MainFrame getObject() {
         return mainFrame;
     }
+
     /**
      * Contructor of the MainFrame
      */
@@ -472,6 +472,7 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     /**
      * The user will be logged out, when the button is clicked
+     *
      * @param evt mouse click
      */
     private void jBLogOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLogOutActionPerformed
@@ -481,23 +482,24 @@ public class MainFrame extends javax.swing.JFrame {
         this.dispose();
         user = null;
     }//GEN-LAST:event_jBLogOutActionPerformed
-    
+
     /**
-     * Following the mouse click onto this button will lead to open the 
+     * Following the mouse click onto this button will lead to open the
      * {@link Account} form to edit certain informations
+     *
      * @param evt mouse click
      */
     private void jBOpenAccountSettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBOpenAccountSettingsActionPerformed
         Account Account = new Account();
         Account.setSize(750, 550);
-        Account.setLocationRelativeTo(null);    
+        Account.setLocationRelativeTo(null);
         Account.setVisible(true);
 
     }//GEN-LAST:event_jBOpenAccountSettingsActionPerformed
     /**
-     * Following the mouse click onto this button, 
-     * the {@link AdminForm} will be opened.
-     * Only admins do have access to this button and it's functions.
+     * Following the mouse click onto this button, the {@link AdminForm} will be
+     * opened. Only admins do have access to this button and it's functions.
+     *
      * @param evt mouse click
      */
     private void jBAdminInterFaceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAdminInterFaceActionPerformed
@@ -510,12 +512,13 @@ public class MainFrame extends javax.swing.JFrame {
         JDialog.setVisible(true);
     }//GEN-LAST:event_jBAdminInterFaceActionPerformed
     /**
-     * Button to open an empty {@link AppointmentForm} so that the user can 
+     * Button to open an empty {@link AppointmentForm} so that the user can
      * create a new appointment.
+     *
      * @param evt mouse click
      */
     private void jBAddAnEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAddAnEventActionPerformed
-        if(!getToday().after(jCalendar2.getDate())){
+        if (!getToday().after(jCalendar2.getDate())) {
             showAppointment(false, true);
         } else {
             JOptionPane.showMessageDialog(this, "This Date is in the Past.");
@@ -524,6 +527,7 @@ public class MainFrame extends javax.swing.JFrame {
     /**
      * An {@link AppointmentForm} will be opened containing the information
      * regarding the selected {@link Appointment} within the {@link EventTable}.
+     *
      * @param evt mouse click
      */
     private void jBEditAnEventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEditAnEventActionPerformed
@@ -539,8 +543,9 @@ public class MainFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Please pick an Appointment which you want to edit!");
     }//GEN-LAST:event_jBEditAnEventActionPerformed
     /**
-     * Opens an {@link AppointmentOfDayForm} containing the names of all 
+     * Opens an {@link AppointmentOfDayForm} containing the names of all
      * {@link Appointment} of the chosen Date.
+     *
      * @param evt another day of the Calender has been selected
      */
     private void jCalendar2PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jCalendar2PropertyChange
@@ -549,9 +554,10 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jCalendar2PropertyChange
 
     /**
-     * Changes the Date of the Calendar depending on which {@link java.util.Date}
-     * was chosen in the Datechooser
-     * @param evt another {@link java.util.Date} was picked within the 
+     * Changes the Date of the Calendar depending on which
+     * {@link java.util.Date} was chosen in the Datechooser
+     *
+     * @param evt another {@link java.util.Date} was picked within the
      * Datechooser.
      */
     private void jDateChooser1PropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooser1PropertyChange
@@ -559,8 +565,9 @@ public class MainFrame extends javax.swing.JFrame {
         jCalendar2.setDate(chosenDate);
     }//GEN-LAST:event_jDateChooser1PropertyChange
     /**
-     * Opens a {@link JFileChooser} in which the user can choose where to 
-     * store his/her weekly schedule.
+     * Opens a {@link JFileChooser} in which the user can choose where to store
+     * his/her weekly schedule.
+     *
      * @param evt mose click
      */
     private void button_downloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_downloadActionPerformed
@@ -569,6 +576,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_button_downloadActionPerformed
     /**
      * shows Events of this month in the {@link EventTable}
+     *
      * @param evt mouse click
      */
     private void button_monthsEventsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_monthsEventsActionPerformed
@@ -576,6 +584,7 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_button_monthsEventsActionPerformed
     /**
      * shows Events of today in the {@link EventTable}
+     *
      * @param evt mouse click
      */
     private void button_dayEventsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_dayEventsActionPerformed
@@ -583,13 +592,15 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_button_dayEventsActionPerformed
     /**
      * shows urgent Events in the Table
+     *
      * @param evt mouse click
      */
     private void jLUrgentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLUrgentMousePressed
-        
+
     }//GEN-LAST:event_jLUrgentMousePressed
     /**
      * shows Events of this wekk in the {@link EventTable}
+     *
      * @param evt mouse click
      */
     private void button_weeksEventsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button_weeksEventsActionPerformed
@@ -629,10 +640,12 @@ public class MainFrame extends javax.swing.JFrame {
             new MainFrame().setVisible(true);
         });
     }
+
     /**
-     * Adds a mouse- and keylistener to all the necessary components of the 
+     * Adds a mouse- and keylistener to all the necessary components of the
      * JCalendar, so that it could be individualised.
-     * @param container 
+     *
+     * @param container
      */
     private void addListenerToCalenderContent(Container container) {
 
@@ -736,69 +749,83 @@ public class MainFrame extends javax.swing.JFrame {
         }
 
     }
-    
+
     private void setToday(Date date) {
         this.today = date;
 
     }
+
     /**
      * returns todays date
+     *
      * @return todays {@link java.util.Date}
      */
     public Date getToday() {
         return today;
     }
+
     /**
      * returns the user logged into the application
+     *
      * @return the {@link User}
      */
     public User getUser() {
         return user;
     }
+
     /**
      * sets user using the application right now
+     *
      * @param user {@link User}
      */
     public void setUser(User user) {
         if (user != null) {
             this.user = user;
         }
-        
-        if(this.user.getRoleName().equals("User")){
+
+        if (this.user.getRoleName().equals("User")) {
             jBAdminInterFace.setVisible(false);
             jBAdminInterFace.setEnabled(false);
         }
-        
+
         String welcome = "~" + this.user.getFirstname() + " " + this.user.getLastname() + "'s Timeline~";
         this.jLTimeLine.setText(welcome);
     }
+
     /**
-     * Sets the event of the Frame depending on the {@link User} action.
-     * The Default Value of these events are all future events
+     * Sets the event of the Frame depending on the {@link User} action. The
+     * Default Value of these events are all future events
+     *
      * @param userEvents {@link ArrayList} of {@link Appointment}
      */
     public void setEvents(ArrayList<Appointment> userEvents) {
-        this.usersEvents = userEvents;  
+        this.usersEvents = userEvents;
         TablePanel.add(new EventTable());
     }
+
     /**
      * Returns a list of Appointments depending on which action the user took
      * beforehand.
+     *
      * @return {@link ArrayList} of {@link Appointment}s
      */
     public ArrayList<Appointment> getEvents() {
         return usersEvents;
     }
+
     /**
      * gets the days of the Calender which was selected before
+     *
      * @return {@link Date}
      */
     private Date getDayBefore() {
         return DayBeforeSwitch;
     }
+
     /**
-     * sets the {@link Date} before the Day of the Calendar has switch. 
-     * Private Function for better userhandling
+     * sets the {@link Date} before the Day of the Calendar has switch. Private
+     * Function for better userhandling
+     *
      * @param before {@link Date} before switchen
      */
     private void setDayBefore(Date before) {
@@ -807,19 +834,23 @@ public class MainFrame extends javax.swing.JFrame {
 
     /**
      * Returns the Panel in which the {@link AppointmentForm} will be displayed
-     * @return {@link JPanel} 
+     *
+     * @return {@link JPanel}
      */
     private JPanel getAppointmentEditorPanel() {
         return AppointmentPanel;
     }
+
     /**
      * Returns the Panel in which all the table Content of {@link EventTable}
      * will be displayed
+     *
      * @return {@link JPanel}
      */
     private JPanel getTablePanel() {
         return TablePanel;
     }
+
     /**
      * Updates the {@link EventTable}
      */
@@ -831,12 +862,14 @@ public class MainFrame extends javax.swing.JFrame {
         getTablePanel().add(evts);
         evts.setVisible(true);
     }
+
     /**
      * Displays an {@link AppointmentForm} either containing information of an
-     * existing {@link Appointment} or an empty form. Also the access is 
+     * existing {@link Appointment} or an empty form. Also the access is
      * controlled
-     * @param isAppointment {@link Boolean} true if there's an {@link Appointment}
-     * which is to be edite
+     *
+     * @param isAppointment {@link Boolean} true if there's an
+     * {@link Appointment} which is to be edite
      * @param enabled {@link Boolean} true if the user wants to edit the form
      */
     public void showAppointment(boolean isAppointment, boolean enabled) {
@@ -849,35 +882,41 @@ public class MainFrame extends javax.swing.JFrame {
             evt.setVisible(true);
         }
     }
+
     /**
      * Returns the Event which is selected within the {@link EventTable}
+     *
      * @return {@link Appointment} which is selected
      */
     public Appointment getSelectedEvent() {
         return selectedEvent;
     }
+
     /**
      * Sets the selectedEvent to the Event which is selected within the
      * {@link EventTable}.
-     * @param row 
+     *
+     * @param row
      */
     void setSelectedEvent(int row) {
         this.selectedEvent = usersEvents.get(row);
     }
-    
+
     /**
      * returns the Events of a certain {@link Date} which has been selected by
      * the {@link User}
+     *
      * @return an {@link ArrayList} of {@link Appointment}s
      */
     public ArrayList<Appointment> getDaysEvents() {
         Date chosenDate = jCalendar2.getDate();
         return AppointmentHandler.getEventsOfDay(usersEvents, chosenDate);
     }
-    
+
     /**
-     * sets the default configurations of the Application after the user has 
+     * sets the default configurations of the Application after the user has
      * logged into the application successfully
+     *
      * @param user containing information of the user who has logged in
      */
     public void setConfigurations(User user) {
@@ -887,54 +926,53 @@ public class MainFrame extends javax.swing.JFrame {
         addListenerToCalenderContent((Container) jCalendar2.getComponent(1));
         setDayBefore(jCalendar2.getDate());
         setToday(jCalendar2.getDate());
-        setUrgencies(dbhandler.getThisWeeksPriority(getUser()));   
+        setUrgencies(dbhandler.getThisWeeksPriority(getUser()));
     }
 
-    
     /**
      * Shows all {@link Appointment} which are coming up this month within the
      * {@link EventTable}
-    */
-    public void showMonthlyEvents(){
+     */
+    public void showMonthlyEvents() {
         setEvents(dbhandler.getEventOfMonth(getUser()));
         updateTable();
     }
-    
+
     /**
      * Shows all {@link Appointment} which are coming up this week within the
      * {@link EventTable}
-    */
-    public void showWeeklyEvents(){
+     */
+    public void showWeeklyEvents() {
         setEvents(dbhandler.getEventOfWeek(getUser()));
         updateTable();
     }
-    
+
     /**
      * Shows all {@link Appointment} which are coming up today within the
      * {@link EventTable}
-    */
-    public void showDailyEvents(){
+     */
+    public void showDailyEvents() {
         setEvents(dbhandler.getEventsOfDay(getUser(), LocalDate.now()));
         updateTable();
     }
-    
+
     /**
-     * Updates the Events of a user, as well as the content of the 
+     * Updates the Events of a user, as well as the content of the
      * {@link EventTable} whenever necessary.
      */
     public void updateEvents() {
-        if(user != null){
-        setEvents(dbhandler.getUsersEvents(getUser())); 
-        setUrgencies(dbhandler.getThisWeeksPriority(user));
-        updateTable();
+        if (user != null) {
+            setEvents(dbhandler.getUsersEvents(getUser()));
+            setUrgencies(dbhandler.getThisWeeksPriority(user));
+            updateTable();
         }
     }
-    
-    
+
     /**
      * returns an array which contains information about the amount of Events of
      * certain priorities
-     * @param thisWeeksPriority array containing the amount of Events of its 
+     *
+     * @param thisWeeksPriority array containing the amount of Events of its
      * respective priority
      */
     private void setUrgencies(int[] thisWeeksPriority) {
@@ -942,15 +980,15 @@ public class MainFrame extends javax.swing.JFrame {
         jLNotSoUrgent.setText("You have " + thisWeeksPriority[1] + " not so urgent");
         jLEnjoy.setText("You have " + thisWeeksPriority[0] + " meetings this");
     }
-    
-    
+
     /**
-     * Opens an {@link AppointmentOfDayForm} which shows a {@link JList} 
+     * Opens an {@link AppointmentOfDayForm} which shows a {@link JList}
      * containing all the names of {@link Appointment}s of a chosen date
-     * @param date date which has been chosen 
+     *
+     * @param date date which has been chosen
      */
     private void showEventsOfDay(Date date) {
-       Date chosenDate = jCalendar2.getDate();
+        Date chosenDate = jCalendar2.getDate();
         if (usersEvents != null) {
             AppointmentPanel.removeAll();
             AppointmentPanel.revalidate();
@@ -959,12 +997,12 @@ public class MainFrame extends javax.swing.JFrame {
                     = AppointmentHandler.getEventsOfDay(usersEvents, chosenDate);
 
             AppointmentOfDayForm appointmentOfDay = new AppointmentOfDayForm(getDaysEvents());
-            
+
             AppointmentPanel.add(appointmentOfDay);
             appointmentOfDay.setVisible(true);
         }
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AppointmentPanel;
     private javax.swing.JPanel CalendarPanel;
@@ -1003,5 +1041,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
     // End of variables declaration//GEN-END:variables
+
+    void setSelectedEvent(Appointment selectedEvent) {
+        this.selectedEvent = usersEvents.get(usersEvents.indexOf(selectedEvent));
+    }
 
 }
