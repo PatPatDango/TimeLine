@@ -509,6 +509,8 @@ public class AppointmentForm extends javax.swing.JPanel {
         if (testIfEventInformationIsSufficient(this.evt)) {
             dbHandler.createNewEvent(getEvent());
             MainFrame.getObject().updateEvents();
+            JOptionPane.showMessageDialog(null, "Event created successfully!");
+            
         } else {
             JOptionPane.showMessageDialog(null, "Please Check your Input");
         }
