@@ -594,6 +594,10 @@ public class AppointmentForm extends javax.swing.JPanel {
             jDC_eventDate.setEnabled(settings);
             button_saveSettings.setEnabled(false);
             jBDeleteEvent.setEnabled(true);
+            List_Participants.setEnabled(settings);
+            List_otherUser.setEnabled(settings);
+            button_addParticipant.setEnabled(settings);
+            button_removeParticipant.setEnabled(settings);
         }
     }
     /**

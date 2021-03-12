@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import Classes.*;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 
 /**
  * A form which presents all Appointment of a Certain Day
@@ -130,11 +131,14 @@ public class AppointmentOfDayForm extends javax.swing.JPanel {
         User user = MainFrame.getObject().getUser();
         Appointment selectedEvent = getSelectedEvent(row);
         MainFrame.getObject().setSelectedEvent(selectedEvent);
-        if (evt.getClickCount() > 1 && user.equals(selectedEvent.getHost())) {     
-                MainFrame.getObject().showAppointment(true, true); 
-        }else{
+         if (evt.getClickCount() > 1) {
+            if (user.equals(selectedEvent.getHost())) {
+                MainFrame.getObject().showAppointment(true, true);
+            } else {
                 MainFrame.getObject().showAppointment(true, false);
-        }
+            }
+        } 
+        
         
     }//GEN-LAST:event_List_DaysEventsMousePressed
 

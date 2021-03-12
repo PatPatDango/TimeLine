@@ -70,13 +70,14 @@ public class DatabaseHandler {
      * which will be created
      */ 
     public void createNewEvent(Appointment event) {
-        String sql = "INSERT INTO event (  E_eventName, E_DateTime, E_duration, E_location, E_host) VALUES (?,?,?,?,?); ";
+        String sql = "INSERT INTO event (E_eventName, E_DateTime, E_duration, E_location, E_host, E_priority) VALUES (?,?,?,?,?); ";
         try ( PreparedStatement st = con.prepareStatement(sql)) {
             st.setString(1, event.getName());
             st.setTimestamp(2, Timestamp.valueOf(event.getDateTime()));
             st.setInt(3, event.getDuration());
             st.setString(4, event.getLocation());
             st.setString(5, event.getHost().getUsername());
+            st.setString(6, event.getPriority());
             st.executeUpdate();
             int event_ID = GetMaxEvents();
             InsertParticipants(event_ID, event.getParticipants());
